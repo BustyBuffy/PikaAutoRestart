@@ -1,0 +1,24 @@
+name: PikaRestart
+main: me.daniel.ARPlugin
+version: 0.5 (beta)
+description: Provides timed automatic restart capability.
+
+commands:
+   pr:
+      description: Changes automatic restart interval (for this session only), reloads settings, or retrieves information
+      usage: |
+        /pr <hours> <minutes> <seconds>
+        /pr cancel
+        /pr now
+        /pr reload
+        /pr status
+      permission: pikarestart.pr
+      permission-message: You don't have permission for this command
+
+permissions:
+  pikarestart.*:
+    description: gives all permissions of the PikaRestart
+    default: op
+    children:
+      pikarestart.pr:
+        description: Gives permission to set a different restart deadline for this session.
